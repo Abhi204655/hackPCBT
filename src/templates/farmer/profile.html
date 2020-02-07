@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+{{user.username}}
+{% endblock title %}
+
+{% block profileactive %}
+active
+{% endblock profileactive %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static "style/home.css" %}">
+{% endblock style %}
+{% block main %}
+
+<h1>this is the profile page</h1>
+
+{% endblock main %}
+
+
+<!-- styles-->

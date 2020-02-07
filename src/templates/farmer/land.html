@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title%}
+Lands
+{% endblock title%}
+
+{% block style %}
+<link rel="stylesheet" href="{% static "style/home.css" %}">
+{% endblock style %}
+{% block landactive %}
+active
+{% endblock landactive %}
+
+{% block main %}
+<div class="container my-3">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="length">Length</label>
+            <input type="number" class="form-control" id="length" name="length" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="width">Width</label>
+            <input type="number" class="form-control" id="width" name="width" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" name="address" id="address">
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" id="city">
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" name="state" id="state">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock main %}

@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}
+Logout
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static "style/home.css" %}">
+{% endblock style %}
+{% block loginactive %}
+active
+{% endblock loginactive %}
+
+{% block main %}
+<div class="container">    
+    <h1>
+        you are logged out successfully.
+    </h1>
+    <p>Want to login again?</p><a href="/login">Login</a>
+</div>
+
+{% endblock main %}

@@ -1,0 +1,26 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+Register
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static "style/home.css" %}">
+{% endblock style %}
+
+{% block registeractive %}
+active
+{% endblock registeractive %}
+
+{% block main %}
+<div class="container my-3">
+    <form method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value="submit" class="btn btn-primary">
+    </form>
+    <p class="my-0 mt-2">Already have an account? </p>
+    <a href="/" class-"my-0">Log in</a>
+</div>
+{% endblock main %}

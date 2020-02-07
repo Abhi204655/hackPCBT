@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+
+{% block homeactive %}
+active
+{% endblock homeactive %}
+{% block style %}
+<link rel="stylesheet" href="{% static "style/home.css" %}">
+{% endblock style %}
+
+
+{% block main %}
+<div class="main-view">
+    <div class="bg">    
+        <img src="{% static "img/farmer2.jpg" %}">
+    </div>
+    <div class="quote">
+        <h1><span id="big">W</span>e are the Creators of this World..</h1>
+        <h1>जय जवान जय किसान</h1>
+        <button id="btn">Continue</button>
+    </div>
+</div>
+
+
+{% endblock main %}
+
+
+<!-- styles-->
