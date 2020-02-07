@@ -5,12 +5,10 @@ from django.conf import settings
 User = settings.AUTH_USER_MODEL
 
 class Land(models.Model):
-    length = models.IntegerField()
-    width = models.IntegerField()
+    length = models.IntegerField(null=False)
+    width = models.IntegerField(null=False)
     owner = models.ForeignKey(User,on_delete=models.CASCADE)
-    address = models.TextField()
-    city = models.TextField()
-    state = models.TextField()
-    image = models.ImageField(upload_to="land_img",null=True)
-    
-
+    address = models.TextField(null=False)
+    city = models.TextField(null=False)
+    state = models.TextField(null=False)
+    image = models.ImageField(upload_to="img/")
