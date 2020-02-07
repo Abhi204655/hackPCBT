@@ -1,23 +1,14 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block title %}
-{{user.username}}
+Lands
 {% endblock title %}
 
-{% block profileactive %}
+{% block landactive %}
 active
-{% endblock profileactive %}
+{% endblock landactive %}
 
 {% block main %}
-<div class="container my-2">
-    <div class="jumbotron">
-    <h1 class="display-4">Hello, {{user.username}}!</h1>
-    <p class="lead">Register more lands that belongs to you.</p>
-    <hr class="my-4">
-    <p>Register your land and rest left on us.</p>
-    <a class="btn btn-primary btn-lg" href="/landRegister   " role="button">Register</a>
-    </div>
-</div>
 {% for land in lands%}
 <div class="container my-2">
         <div class="card d-flex align-content-start flex-wrap">

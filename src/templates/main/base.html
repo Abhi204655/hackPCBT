@@ -26,19 +26,18 @@
             <li class="nav-item {% block homeactive %}{% endblock homeactive %}">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            {% if user.is_authenticated%}
-            <li class="nav-item ">
-                <a class="nav-link" href="/profile">Hi'{{user.username}}</a>
-            </li>
             <li class="nav-item {% block landactive %}{% endblock landactive %}">
                 <a class="nav-link" href="/land">Lands <span class="sr-only">(current)</span></a>
             </li>
+            {% if user.is_authenticated%}
             <li class="nav-item {% block profileactive %}{% endblock profileactive %}">
+                <a class="nav-link" href="/profile">Hi'{{user.username}}</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/logout">Logout</a>
             </li>
             
             {%else%}
-            
             <li class="nav-item {% block loginactive %}{% endblock loginactive %}">
                 <a class="nav-link" href="/login">Log In</a>
             </li>
@@ -47,9 +46,9 @@
             </li>
             {%endif%}
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form class="form-inline my-2 my-lg-0" method="get" action="/search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
