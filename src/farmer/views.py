@@ -12,7 +12,6 @@ User = settings.AUTH_USER_MODEL
 def home(request):
     return render(request,'farmer/home.html')
 
-
 def landRegister(request):
     if request.method == 'POST':
         length = request.POST.get('length')
